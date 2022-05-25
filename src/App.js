@@ -34,6 +34,19 @@ class App extends Component{
       console.log("vowelsArray:", vowelsArray)
 
       // your code here!
+      //tools we can use to identify/move the words around: slice()- take an index number and everything after it or to a point, .push() to add to the end, unshift() to add to the start
+      //concat to add letters ay, way, etc
+      //we need to use a conditional:
+      //to add way to the end of words begining with way vowel
+      //to move first consonants to the end and add ay
+      //if the first consonant contains qu move u with the q === quay
+      //y is treated like a vowel in appropriate circumstances...? if it starts with y it is treated as a consonant, if at the end it is treated as a vowel and moved to the end
+      //add ay to the second half of the word
+      if(currentWord[0] === "a" || currentWord[0] === "e" || currentWord[0] === "i" || currentWord[0] === "o" || currentWord[0] === "u" || currentWord[0] === "y"){
+        return currentWord.concat("way")
+      }else if(currentWord[0] !== "a" || currentWord[0] !== "e" || currentWord[0] !== "i" || currentWord[0] !== "o" || currentWord[0] !== "u" || currentWord[0] !== "y"){
+        return test
+      }
 
       // Remember: console.log is your friend :)
 
