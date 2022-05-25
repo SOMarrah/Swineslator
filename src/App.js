@@ -45,7 +45,13 @@ class App extends Component{
       if(currentWord[0] === "a" || currentWord[0] === "e" || currentWord[0] === "i" || currentWord[0] === "o" || currentWord[0] === "u" || currentWord[0] === "y"){
         return currentWord.concat("way")
       }else if(currentWord[0] !== "a" || currentWord[0] !== "e" || currentWord[0] !== "i" || currentWord[0] !== "o" || currentWord[0] !== "u" || currentWord[0] !== "y"){
-        return test
+        let endSliced = currentWord.slice(currentWord.indexOf(vowelsArray[0]))
+        let beginSlice = currentWord.split("").reverse().slice(currentWord.indexOf(vowelsArray[0 + 1])).reverse().join("")
+        console.log(beginSlice)
+        console.log(endSliced)
+        console.log(endSliced.concat(beginSlice) + 'ay')
+        return endSliced.concat(beginSlice) + 'ay'
+        
       }
 
       // Remember: console.log is your friend :)
