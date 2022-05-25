@@ -26,7 +26,7 @@ footer {
 }
 
 .butcherPig {
-  width: 12rem;
+  max-height: 11rem;
 }
 
 .userInput {
@@ -64,9 +64,9 @@ footer {
 #translated{
   font-size: 1.5rem;
 }
-#images{
+/* #images{
   height: 8rem;
   width: 20rem;
   margin: auto;
 
-}
+} */
