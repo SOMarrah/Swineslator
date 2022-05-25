@@ -9,10 +9,6 @@ import funnypig3 from './assets/funnypig3.jpeg'
 class App extends Component{
   constructor(props){
     super(props)
-    const img1 = require('./assets/funnypig1.jpeg');
-    const img2 = require('./assets/funnypig2.jpeg');
-    const img3 = require('./assets/funnypig3.jpeg');
-    const img0 = require('./assets/butcherPig.jpeg');
     // the state object holds information that can be displayed to the user and updated throughout the program
     this.state = {
       // "phrase" is the text entered by the user - right now there are test words hard coded to make the process of testing your code faster and easier
@@ -21,7 +17,7 @@ class App extends Component{
       // "phraseTranslated" is what the user will see appear on the page as Pig Latin, it starts as the preset message and updates when your user clicks the "submit" button
       phraseTranslated: "This is where your translated sentence will appear.",
       imgIndex: 0,
-      imgList: [img0, img1, img2, img3]
+      imgList: [butcherPig, funnypig1, funnypig2, funnypig3]
     }
   }
 
