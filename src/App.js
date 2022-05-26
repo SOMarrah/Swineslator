@@ -160,7 +160,7 @@ class App extends Component{
           <button onClick={this.restartGame}>Clear</button>
         </div>
         <p id="translated">{this.state.phraseTranslated}</p>
-        <footer>Coded by ~ <a href="https://github.com/SOMarrah">Stephen OMarrah</a> && <a href="https://github.com/niclast7611">Nic Last</a>~</footer>
+        <footer>Coded by ~ <a href="https://github.com/SOMarrah" target="_blank" rel="noopener noreferrer">Stephen OMarrah</a> && <a href="https://github.com/niclast7611" target="_blank" rel="noopener noreferrer">Nic Last</a>~</footer>
       </>
     )
   }
