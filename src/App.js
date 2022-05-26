@@ -41,6 +41,9 @@ class App extends Component{
       })
       console.log("vowelsArray:", vowelsArray)
 
+      let sometimesY = currentWord.split("").filter(y => {return y === "y"})
+      console.log(sometimesY);
+
       // your code here!
       //tools we can use to identify/move the words around: slice()- take an index number and everything after it or to a point, .push() to add to the end, unshift() to add to the start
       //concat to add letters ay, way, etc
@@ -70,6 +73,8 @@ class App extends Component{
         // return endSliced2.concat(beginSliced2)+'ay'
 
         //this conditional checks for words not starting with vowels (consonants)
+      }else if(currentWord.toLowerCase()[1] === "y" || currentWord.toLowerCase()[2] === "y" || currentWord.toLowerCase()[3] === "y"){
+        pigWord = currentWord.slice(currentWord.indexOf(sometimesY[0])).concat(currentWord.slice(0, currentWord.indexOf(sometimesY[0])))+'ay'
       }else if(currentWord.toLowerCase()[0] !== "a" || currentWord.toLowerCase()[0] !== "e" || currentWord.toLowerCase()[0] !== "i" || currentWord.toLowerCase()[0] !== "o" || currentWord.toLowerCase()[0] !== "u"){
         //if the word starts with a consonant we slice it to the first vowel and move it to the end with ay. we also slice it from the first vowel to the end to start the word.
         pigWord = currentWord.slice(currentWord.indexOf(vowelsArray[0])).concat(currentWord.slice(0, currentWord.indexOf(vowelsArray[0])))+'ay'
@@ -78,6 +83,7 @@ class App extends Component{
         // let beginSlice = currentWord.split("").reverse().slice(currentWord.indexOf(vowelsArray[-0])).reverse().join("")
         // let beginSlice = currentWord.slice(0, currentWord.indexOf(vowelsArray[0]))
         // return endSliced.concat(beginSlice) + 'ay'
+
       }
 
       // Remember: console.log is your friend :)
