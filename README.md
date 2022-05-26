@@ -2,7 +2,7 @@
 
 [Oday ouyay eakspay igpay atinlay?](http://www.wikihow.com/Speak-Pig-Latin)
 
-This was a project for LEARN Academy. We had to use the rules below to create an app that translated pig latin. This was a collaboration project between [Nic Last](https://github.com/niclast7611and) [Stephen OMarrah](https://github.com/SOMarrah).
+This was a project for LEARN Academy. We had to use the rules below to create an app that translated english to pig latin. This was a collaboration project between [Nic Last](https://github.com/niclast7611) and [Stephen OMarrah](https://github.com/SOMarrah).
 
 ### Rules of Pig Latin
 - For words beginning with a vowel, add "way" to the end.
