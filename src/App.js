@@ -16,8 +16,10 @@ class App extends Component{
       phrase: "",
       // "phraseTranslated" is what the user will see appear on the page as Pig Latin, it starts as the preset message and updates when your user clicks the "submit" button
       phraseTranslated: "This is where your translated sentence will appear.",
+      //this is key pair to store the current index of images
       imgIndex: 0,
-      imgList: [butcherPig, funnypig1, funnypig2, funnypig3]
+      //this is array of images that gets cycled through
+      imgList: [butcherPig, funnypig1, funnypig2, funnypig3],
     }
   }
 
@@ -48,19 +50,32 @@ class App extends Component{
       //if the first consonant contains qu move u with the q === quay
       //y is treated like a vowel in appropriate circumstances...? if it starts with y it is treated as a consonant, if at the end it is treated as a vowel and moved to the end
       //add ay to the second half of the word
+
+      //this variable is where we store the translated pig latin word
       let pigWord = ""
 
-      if(currentWord === ""){
-        pigWord = "Enter some words"
+      //this is our conditional for our translator
+      //the first statement is for if the box is left empty
+      if(currentWord === "" || currentWord === " "){
+        pigWord = "Please enter words to be translated"
+        //the second conditional checks for words starting with vowels
       }else if(currentWord.toLowerCase()[0] === "a" || currentWord.toLowerCase()[0] === "e" || currentWord.toLowerCase()[0] === "i" || currentWord.toLowerCase()[0] === "o" || currentWord.toLowerCase()[0] === "u"){
+        //if there are words starting with vowels, we add way to the end
         pigWord = currentWord.concat("way")
+        //this conditional checks for words starting with qu.
       }else if(currentWord.toLowerCase()[0]=== "q" && currentWord.toLowerCase()[1] === "u"){
+        //if there is words starting with qu we move it to the end and ad ay to it
         pigWord = currentWord.slice(2).concat(currentWord.slice(0,2))+'ay'
         // let beginSliced2 = currentWord.slice(0,2)
         // return endSliced2.concat(beginSliced2)+'ay'
+
+        //this conditional checks for words not starting with vowels (consonants)
       }else if(currentWord.toLowerCase()[0] !== "a" || currentWord.toLowerCase()[0] !== "e" || currentWord.toLowerCase()[0] !== "i" || currentWord.toLowerCase()[0] !== "o" || currentWord.toLowerCase()[0] !== "u"){
+        //if the word starts with a consonant we slice it to the first vowel and move it to the end with ay. we also slice it from the first vowel to the end to start the word.
         pigWord = currentWord.slice(currentWord.indexOf(vowelsArray[0])).concat(currentWord.slice(0, currentWord.indexOf(vowelsArray[0])))+'ay'
-        // let beginSlice = currentWord.split("").reverse().slice(currentWord.indexOf(vowelsArray[-0])).reverse().join("") -this was really messed up way of trying to do it...
+
+        //-this was really messed up way of trying to do it...
+        // let beginSlice = currentWord.split("").reverse().slice(currentWord.indexOf(vowelsArray[-0])).reverse().join("")
         // let beginSlice = currentWord.slice(0, currentWord.indexOf(vowelsArray[0]))
         // return endSliced.concat(beginSlice) + 'ay'
       }
@@ -97,6 +112,7 @@ class App extends Component{
     // this method prevents React from refreshing the page unnecessarily
     e.preventDefault()
     this.myPigLatinCodeHere()
+    //this is the call back for the image cycler
     this.handleClick()
   }
 
@@ -105,14 +121,17 @@ class App extends Component{
     // this method takes the input and saves the value in this.state.phrase so we can use the input in our program
     this.setState({phrase: e.target.value})
   }
+  //this method is for cycling through the pig images
   handleClick = () => {
+    //this conditional checks to see if we are at the end of the array, if so we cycle back to 0
     if(this.state.imgIndex +1 === this.state.imgList.length){
       this.setState({ imgIndex:0 })
+      //the else portion adds 1 to the index
     }else{
         this.setState({imgIndex: this.state.imgIndex +1})
     }
   }
-
+//we were thinking of using random images instead of in order
 //onClick = images[Math.floor(Math.random()*3)]
   render() {
     return (
@@ -137,14 +156,11 @@ class App extends Component{
           />
           <br />
           {/* button that called the setUpPreventDefault method which calls the myPigLatinCodeHere method */}
-          <button onClick={this.setUpPreventDefault}>
-          Submit
-          </button>
-
+          <button onClick={this.setUpPreventDefault}>Submit</button>
           <button onClick={this.restartGame}>Clear</button>
         </div>
         <p id="translated">{this.state.phraseTranslated}</p>
-        <footer>Coded by ~Stephen OMarrah && Nic Last~</footer>
+        <footer>Coded by ~ <a href="https://github.com/SOMarrah" target="_blank">Stephen OMarrah</a> && <a href="https://github.com/niclast7611" target="_blank">Nic Last</a>~</footer>
       </>
     )
   }

@@ -11,62 +11,65 @@ body {
 }
 
 h1 {
-  font-size: 4rem;
+  margin-top: auto;
+  font-size: 3rem;
 }
 
 button {
   margin: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.8rem;
   padding: 1rem;
   background-color: white;
 }
 
 footer {
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .butcherPig {
-  max-height: 11rem;
+  max-height: 9rem;
+  margin: 1rem;
+  border: 1px solid;
+  box-shadow: 0rem .2rem .9rem .1rem black ;
 }
 
 .userInput {
   border-radius: .5rem;
   font-size: 1rem;
-  height: 5rem;
+  height: 3rem;
   width: 20rem;
   text-align: center;
   background-color: white;
 }
 
 .inputArea {
+  max-height: 15rem;
   background-color: #606060;
   color: #fff;
   border-radius: .5rem;
   padding: 1rem;
   font-size: 2rem;
+  border: 5px solid rgba(82, 71, 38);
 }
+
 #headerTitle{
   background-color: #606060;
+}
+#translated{
+  font-size: 1.5rem;
 }
 
 @media only screen and (max-width: 650px) {
   h1 {
     font-size: 2rem;
+  }.inputArea {
+    max-height: 25rem;
   }
   .userInput{
     font-size: 1rem;
-    height: 5rem;
+    height: 3rem;
     width: 90%;
     padding: 1rem;
     text-align: center;
   }
 }
-#translated{
-  font-size: 1.5rem;
-}
-/* #images{
-  height: 8rem;
-  width: 20rem;
-  margin: auto;
-
-} */
